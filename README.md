@@ -3,6 +3,7 @@ I'm a developer, passionate about technology, games and challenges! Working on t
 
 - 🏢 I’m currently working at **Unimed Norte Fluminense**
 - 💻 I’m currently developing a **delivery app**
+- 🧩 I have already developed projects with: **HTML**, **CSS**, **Javascript**, **Node.js**, **Express.js**, **Typescript**, **PHP**, **Java** and **JSP**
 - 🌱 I’m currently learning **Vue.js** and **Flutter**
 - ⚡ Fun fact: I'm a huge fan of **Back to The Future**!
 
