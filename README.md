@@ -1,7 +1,7 @@
 ## Hey! 👋
 I'm a developer, passionate about technology, games and challenges! Working on things I love and always trying to learn somthing new..
 
-- 🏢 I’m currently working at **Unimed Norte Fluminense**
+- 🏢 I’m currently working at **Gerencianet**
 - 💻 I’m currently developing a **delivery app**
 - 🧩 I have already developed projects with: **HTML**, **CSS**, **Javascript**, **Node.js**, **Express.js**, **PHP**, **Java** and **JSP**
 - 🌱 I’m currently learning **Typescript**
