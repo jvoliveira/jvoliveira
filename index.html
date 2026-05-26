@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Notificações</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+  <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
+
     OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
+
+      await OneSignal.init({
         appId: "fa7f193f-0634-44e0-94fc-6291d3edbd53",
-        });
+      });
+
+      window.askPermission = async function() {
+        await OneSignal.Notifications.requestPermission();
+      }
+
     });
-    </script>
+  </script>
+
 </head>
+
 <body>
-    
+
+  <button onclick="askPermission()">
+    Ativar notificações
+  </button>
+
 </body>
 </html>
