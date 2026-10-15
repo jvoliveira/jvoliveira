@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>João Vitor Oliveira</title>
+    <meta
+      name="description"
+      content="Software Engineer · Solutions Engineer · AI Researcher"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f7fa;
+        --card: #fff;
+        --text: #354765;
+        --head: #121822;
+        --line: #e4e9f2;
+        --accent: #3d8bf2;
+        --grad: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        --link: #629feb;
+        --chip: #2b4c80;
+        --chipt: #fff;
+        --icon: #8497bc;
+        --icont: #fff;
+        --soft: #e4e9f2;
+        --shadow: 0 0.5rem 2rem rgba(18, 24, 34, 0.07);
+        --navbg: rgba(245, 247, 250, 0.85);
+        --tag: #eaedf5;
+        --tagt: #2b4c80;
+        --tagc: #e3f1ff;
+        --tagct: #2f7be0;
+      }
+      :root[data-theme="dark"] {
+        --bg: #14132a;
+        --card: #1c1b38;
+        --text: #b4b2d8;
+        --accent: #89c8ff;
+        --head: #fff;
+        --line: rgba(255, 255, 255, 0.14);
+        --chip: rgba(0, 0, 0, 0.25);
+        --chipt: rgba(255, 255, 255, 0.85);
+        --icon: rgba(0, 0, 0, 0.2);
+        --icont: #d7dde9;
+        --soft: #14132a;
+        --shadow: none;
+        --navbg: rgba(20, 19, 42, 0.85);
+        --tag: rgba(255, 255, 255, 0.08);
+        --tagt: #c9c7ee;
+        --tagc: rgba(102, 166, 255, 0.18);
+        --tagct: #a9d4ff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.3s;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      svg {
+        width: 1em;
+        height: 1em;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vertical-align: -0.125em;
+      }
+      .tools {
+        display: flex;
+        gap: 6px;
+        flex: none;
+        padding-left: 1rem;
+        border-left: 1px solid var(--line);
+      }
+      .pill {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--chip);
+        background: var(--card);
+        border: 0;
+        box-shadow: 0 0.125rem 0.35rem rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font:
+          700 0.7rem Inter,
+          sans-serif;
+        transition: 0.25s;
+      }
+      :root[data-theme="dark"] .pill {
+        color: #d7dde9;
+        background: #2a2950;
+      }
+      .pill:hover {
+        color: var(--link);
+        transform: translateY(-2px);
+      }
+      .wrap {
+        position: relative;
+        max-width: 980px;
+        margin: 96px 16px 40px;
+        padding-top: calc(80px + 1rem);
+        background: var(--card);
+        border-radius: 1.25rem;
+        box-shadow: var(--shadow);
+      }
+      @media (min-width: 1012px) {
+        .wrap {
+          margin-inline: auto;
+        }
+      }
+      .avatar {
+        position: absolute;
+        left: 50%;
+        top: -80px;
+        margin-left: -80px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 8px solid var(--card);
+        display: grid;
+        place-items: center;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+        background: var(--grad);
+        object-fit: cover;
+      }
+      .head {
+        text-align: center;
+        padding: 0 clamp(16px, 5vw, 48px);
+      }
+      .head h1 {
+        font-size: clamp(1.35rem, 4.2vw, 2rem);
+        letter-spacing: clamp(0.1rem, 0.8vw, 0.4rem);
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--head);
+        line-height: 1.25;
+      }
+      .role {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .contact {
+        list-style: none;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 2rem;
+        font-size: 0.875rem;
+      }
+      .contact a {
+        color: var(--text);
+      }
+      .contact a:hover {
+        color: var(--link);
+      }
+      .contact svg {
+        margin-right: 0.5rem;
+        color: var(--accent);
+        font-size: 1.1rem;
+      }
+      .body {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: clamp(20px, 4vw, 48px);
+      }
+      section {
+        padding: 1.7rem 0;
+        border-top: 1px solid var(--line);
+      }
+      section:first-child {
+        border: 0;
+        padding-top: 0;
+      }
+      section:last-child {
+        padding-bottom: 0;
+      }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--head);
+        margin-bottom: 1.1rem;
+      }
+      .hi {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--icon);
+        color: var(--icont);
+        font-size: 1.05rem;
+        flex: none;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        gap: 10px;
+        margin-top: 1.3rem;
+      }
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        padding: 0.7rem;
+        text-align: center;
+      }
+      .stat b {
+        display: block;
+        font-size: 1.15rem;
+        color: var(--accent);
+      }
+      .stat small {
+        font-size: 0.72rem;
+      }
+      .tl {
+        position: relative;
+        padding-left: 2.5rem;
+      }
+      .tl::before {
+        content: "";
+        position: absolute;
+        left: 13px;
+        top: 12px;
+        bottom: 0;
+        width: 3px;
+        background: var(--line);
+      }
+      .ti {
+        position: relative;
+        padding-bottom: 2rem;
+      }
+      .ti:last-child {
+        padding-bottom: 0;
+      }
+      .ti::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 3px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid var(--icon);
+        background: var(--soft);
+        border-radius: 50%;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+      }
+      .co {
+        background: var(--soft);
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        font-weight: 600;
+        text-align: right;
+      }
+      :root[data-theme="dark"] .co {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .ti h3 {
+        font-size: 1.1rem;
+        color: var(--head);
+        margin: 0.35rem 0 0.5rem;
+        line-height: 1.3;
+      }
+      .ti ul {
+        padding-left: 1rem;
+        font-size: 0.92rem;
+      }
+      .ti li {
+        margin-bottom: 0.45rem;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .chip {
+        background: var(--chip);
+        color: var(--chipt);
+        font-size: 0.74rem;
+        font-weight: 600;
+        padding: 0.35rem 0.6rem;
+        border-radius: 0.375rem;
+      }
+      .sm {
+        font-size: 0.85rem;
+      }
+      .sm div {
+        margin-bottom: 0.8rem;
+      }
+      .sm b {
+        display: block;
+        color: var(--head);
+        font-size: 0.875rem;
+      }
+      .sm span {
+        display: block;
+      }
+      .cert {
+        list-style: none;
+        font-size: 0.85rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .cert li {
+        padding-left: 0.95rem;
+        position: relative;
+      }
+      .cert li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.4rem;
+        height: 0.4rem;
+        background: var(--icon);
+      }
+      footer {
+        text-align: center;
+        font-size: 0.75rem;
+        padding: 0 16px 30px;
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .wrap {
+          box-shadow: none;
+          margin-top: 90px;
+        }
+      }
+      .bar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.4rem 16px;
+      }
+      .bar::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--navbg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .menu,
+      .scrim {
+        display: none;
+      }
+      .nav {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        gap: 1.4rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 0.25rem 0;
+        font-size: 0.76rem;
+        letter-spacing: 0.04em;
+      }
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+      .nav a {
+        color: var(--text);
+        opacity: 0.65;
+        white-space: nowrap;
+        padding: 0.15rem 0;
+        border-bottom: 2px solid transparent;
+        transition: 0.2s;
+      }
+      .nav a:first-child {
+        margin-left: auto;
+      }
+      .nav a:last-child {
+        margin-right: auto;
+      }
+      .nav a:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+      .nav a.on {
+        opacity: 1;
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      @media (max-width: 700px) {
+        .menu {
+          display: grid;
+        }
+        .bar {
+          justify-content: space-between;
+        }
+        .tools {
+          border: 0;
+          padding: 0;
+        }
+        .nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 50;
+          width: min(270px, 80vw);
+          flex: none;
+          flex-direction: column;
+          gap: 0.25rem;
+          overflow-y: auto;
+          padding: 4.5rem 1rem 1.5rem;
+          background: var(--card);
+          box-shadow: 0.5rem 0 2rem rgba(0, 0, 0, 0.2);
+          font-size: 0.95rem;
+          transform: translateX(-105%);
+          transition:
+            transform 0.3s,
+            visibility 0.3s;
+          visibility: hidden;
+        }
+        .nav.open {
+          transform: none;
+          visibility: visible;
+        }
+        .nav a {
+          padding: 0.6rem 0.85rem;
+          border-bottom: 0;
+          border-left: 3px solid transparent;
+          border-radius: 0 0.4rem 0.4rem 0;
+        }
+        .nav a:first-child {
+          margin-left: 0;
+        }
+        .nav a:last-child {
+          margin-right: 0;
+        }
+        .nav a.on {
+          background: var(--tag);
+        }
+        .scrim {
+          display: block;
+          position: fixed;
+          inset: 0;
+          z-index: 45;
+          background: rgba(0, 0, 0, 0.4);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s;
+        }
+        .scrim.show {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+      html {
+        scroll-padding-top: 56px;
+      }
+      section {
+        scroll-margin-top: 56px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 0.7rem;
+      }
+      .tags .tag {
+        display: inline-block;
+        font-size: 0.66rem;
+        font-weight: 500;
+        line-height: 1.4;
+        padding: 0.1rem 0.45rem;
+        border-radius: 999px;
+        background: var(--tag);
+        color: var(--tagt);
+      }
+      .tags .tag.c {
+        background: var(--tagc);
+        color: var(--tagct);
+      }
+      .hl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 12px;
+      }
+      @media (max-width: 600px) {
+        .hl {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hlc {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        color: var(--text);
+        transition: 0.25s;
+      }
+      .hlc:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+      .hlc img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        display: block;
+        background: var(--grad);
+      }
+      .hlb {
+        padding: 0.9rem 1rem;
+      }
+      .hlb .k {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+      }
+      .hlb b {
+        display: block;
+        color: var(--head);
+        font-size: 0.95rem;
+        line-height: 1.3;
+      }
+      .hlb p {
+        font-size: 0.82rem;
+        margin-top: 0.3rem;
+      }
+      .totop {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--grad);
+        color: #fff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(8px);
+        transition: 0.25s;
+      }
+      .totop.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      .totop:hover {
+        filter: brightness(1.08);
+      }
+      @media print {
+        .bar,
+        .totop {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar">
+      <button
+        class="pill menu"
+        id="menu"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="nav"
+      >
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+      <nav class="nav" id="nav"></nav>
+      <div class="scrim" id="scrim"></div>
+      <div class="tools">
+        <button class="pill" id="theme" aria-label="Theme">◐</button
+        ><button class="pill" id="lang" aria-label="Language">EN</button>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <header class="head">
+        <img
+          class="avatar"
+          src="assets/perfil.jfif"
+          alt="João Vitor Silva de Oliveira"
+        />
+        <h1>João Vitor Silva de Oliveira</h1>
+        <div class="role" data-t="roles"></div>
+        <ul class="contact" id="contact"></ul>
+      </header>
+      <div class="body">
+        <section id="s-about">
+          <h2 data-i="user" data-t="h_about"></h2>
+          <p data-t="about"></p>
+          <div class="stats" id="stats"></div>
+          <div class="hl" id="hl"></div>
+        </section>
+        <section id="s-exp">
+          <h2 data-i="case" data-t="h_exp"></h2>
+          <div class="tl" id="exp"></div>
+        </section>
+        <section id="s-edu">
+          <h2 data-i="book" data-t="h_edu"></h2>
+          <div class="sm" id="edu"></div>
+        </section>
+        <section id="s-pub">
+          <h2 data-i="file" data-t="h_pub"></h2>
+          <div class="sm" id="pub"></div>
+        </section>
+        <section id="s-cert">
+          <h2 data-i="award" data-t="h_cert"></h2>
+          <ul class="cert" id="cert"></ul>
+        </section>
+      </div>
+    </div>
+    <footer>© <span id="yr"></span> João Vitor Silva de Oliveira</footer>
+    <button class="totop" id="top" aria-label="Top">
+      <svg viewBox="0 0 24 24"><path d="m18 15-6-6-6 6" /></svg>
+    </button>
+
+    <script>
+      const IC = {
+        play: '<svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>',
+        mail: '<svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>',
+        pin: '<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+        gh: '<svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>',
+        in: '<svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>',
+      };
+      const D = {
+        pt: {
+          roles:
+            "Engenheiro de Software · Engenheiro de Soluções · Pesquisador em IA",
+          h_about: "Sobre mim",
+          nav: [
+            ["s-about", "Sobre"],
+            ["s-exp", "Experiência"],
+            ["s-edu", "Formação"],
+            ["s-pub", "Publicação"],
+            ["s-cert", "Certificações"],
+          ],
+          hl: [
+            [
+              "SDK Node.js das APIs Efí",
+              "SDK open source para as APIs Pix, Boleto e Open Finance, com 26 estrelas no GitHub.",
+              "https://github.com/efipay/sdk-node-apis-efi",
+              "gh",
+              "assets/banners/banner_sdk.png",
+            ],
+            [
+              "Deep Learning em Imagens Médicas Volumétricas",
+              "Survey apresentado no SIBGRAPI 2025 sobre estratégias de deep learning para imagens médicas volumétricas.",
+              "https://github.com/jvoliveira/Volumetric-Medical-Imaging-2025",
+              "gh",
+              "assets/banners/banner_deeplearning.png",
+            ],
+            [
+              "Plugin WordPress da Efí",
+              "Plugin oficial de pagamentos do Efí Bank para WordPress/WooCommerce, com Pix e Open Finance.",
+              "https://github.com/efipay/Plugin-Wordpress-Efi",
+              "gh",
+              "assets/banners/banner_wordpress.png",
+            ],
+            [
+              "Módulo n8n do Efí Bank",
+              "Vídeo de apresentação do módulo oficial do Efí Bank para n8n, mostrando como automatizar cobranças Pix e outras operações em workflows sem código.",
+              "https://www.youtube.com/shorts/j5KIzpCK6q0",
+              "yt",
+              "assets/banners/banner_youtube.jpg",
+            ],
+          ],
+          h_exp: "Experiência profissional",
+          h_stack: "Stack técnica",
+          h_soft: "Competências",
+          h_edu: "Formação",
+          h_pub: "Publicação",
+          h_cert: "Certificações",
+          h_lang: "Idiomas",
+          about:
+            "Engenheiro de Software e Pesquisador em IA com mais de 6 anos de experiência em backend, APIs REST, integrações de pagamento e SDKs e plugins open source. Cursando Mestrado em Ciência da Computação (deep learning para imagens médicas) na UFV. Atualmente, Engenheiro de Soluções no Efí Bank, definindo processos, construindo playbooks e gerenciando o relacionamento com mais de 20 dos maiores clientes da empresa. Atuo junto a stakeholders técnicos e de negócio, com Scrum e Kanban.",
+          stats: [
+            ["6+", "anos de experiência"],
+            ["Português", "nativo"],
+            ["Inglês", "profissional"],
+          ],
+          exp: [
+            [
+              "Engenheiro de Soluções",
+              "Efí Bank · Remoto",
+              "mar. 2026 – atual",
+              [
+                "Liderei a estruturação da operação de Customer Success Técnico do zero, com playbook e critérios de monitoramento, chegando a mais de 60 dos maiores clientes.",
+                "Gerenciei mais de 20 contas estratégicas: CSAT de 4,91/5 e 100% de retenção.",
+                "Padronizei playbooks para que 97% das interações fossem proativas.",
+                "Voz do cliente junto a Produto e Engenharia, consolidando bugs e pedidos de funcionalidades em feedbacks priorizados.",
+              ],
+            ],
+            [
+              "Engenheiro de Software II",
+              "Efí Bank · Remoto",
+              "jan. 2024 – mar. 2026",
+              [
+                "Evoluí um bot do Discord que encaminha mensagens de clientes ao Salesforce via Messaging API (Node.js, Express, webhooks).",
+                "Consultoria técnica a parceiros e potenciais clientes: demonstrações de SDKs ao vivo e suporte à integração de APIs.",
+                "Montei e gerenciei a escala de plantão de um time de 10 pessoas.",
+              ],
+            ],
+            [
+              "Engenheiro de Software I",
+              "Efí Bank · Remoto",
+              "abr. 2022 – jan. 2024",
+              [
+                "Liderei o plugin oficial de pagamentos WordPress/WooCommerce: reconstruí do zero, entreguei Pix e Open Finance e mantive mais de 8 versões; mais de 300 instalações ativas.",
+                "Criei suítes de testes de integração com Jest (Boleto, cartão e Pix), elevando a cobertura de endpoints de 0% a 100%.",
+                "Ferramenta web de conversão de certificado mTLS (.p12 → .pem) usada por mais de 380 desenvolvedores.",
+              ],
+            ],
+            [
+              "Técnico em Desenvolvimento de Software",
+              "Efí Bank · Remoto",
+              "jan. 2021 – abr. 2022",
+              [
+                "Desenvolvi o SDK open source em Node.js para as APIs Pix, Boleto e Open Finance: ~2.100 downloads semanais no npm e 26 estrelas no GitHub.",
+                "Suporte técnico a desenvolvedores via tickets, Discord e telefone, depurando integrações (HTTP, webhooks, JSON).",
+              ],
+            ],
+            [
+              "Desenvolvedor Backend",
+              "Camaleão Softwares · Itaperuna, RJ",
+              "jan. 2020 – jan. 2021",
+              [
+                "Backend em NestJS/TypeScript para app mobile de serviços, com OAuth2, MongoDB, webhooks e testes com Jest.",
+              ],
+            ],
+            [
+              "Estagiário de TI → Assistente de TI",
+              "Unimed Norte Fluminense · Itaperuna, RJ",
+              "out. 2018 – dez. 2020",
+              [
+                'Criei o "Comunicados Diários" (Node.js/Express + Electron) para mais de 250 colaboradores.',
+                "Mapeamento de processos, redes básicas, backups e suporte ao sistema clínico.",
+              ],
+            ],
+            [
+              "Desenvolvedor Web",
+              "Agência Couve Limão · Itaperuna, RJ",
+              "ago. 2017 – jun. 2018",
+              [
+                "Blogs, sites institucionais e landing pages de captação e vendas.",
+              ],
+            ],
+          ],
+          edu: [
+            [
+              "Mestrado em Ciência da Computação",
+              "UFV · 2024 – atual",
+              "Dissertação: Deep Learning em Imagens Médicas: Aprimorando o Meta-Learning com Aprendizado Auto-Supervisionado. Previsto: ago. 2027.",
+            ],
+            [
+              "Bacharelado em Sistemas de Informação",
+              "IFF Itaperuna · 2016 – 2020",
+              "",
+            ],
+            ["Técnico em Informática", "IFF · 2012 – 2015", ""],
+          ],
+          cert: [
+            "NestJS: criando uma API REST com TypeScript – Alura, 2022",
+            "Node.js: criando uma API REST padronizada e escalável – Alura, 2022",
+            "TypeScript parte 1 – Alura, 2022",
+            "Git e GitHub – Alura, 2021",
+            "Teste de Software – UFMG, 2021",
+          ],
+        },
+        en: {
+          roles: "Software Engineer · Solutions Engineer · AI Researcher",
+          h_about: "About me",
+          nav: [
+            ["s-about", "About"],
+            ["s-exp", "Experience"],
+            ["s-edu", "Education"],
+            ["s-pub", "Publication"],
+            ["s-cert", "Certifications"],
+          ],
+          hl: [
+            [
+              "Efí APIs Node.js SDK",
+              "Open-source SDK for the Pix, Boleto and Open Finance APIs, with 26 GitHub stars.",
+              "https://github.com/efipay/sdk-node-apis-efi",
+              "gh",
+              "assets/banners/banner_sdk.png",
+            ],
+            [
+              "Deep Learning in Volumetric Medical Imaging",
+              "Survey presented at SIBGRAPI 2025 on deep learning strategies for volumetric medical imaging.",
+              "https://github.com/jvoliveira/Volumetric-Medical-Imaging-2025",
+              "gh",
+              "assets/banners/banner_deeplearning.png",
+            ],
+            [
+              "Efí WordPress Plugin",
+              "Official Efí Bank payment plugin for WordPress/WooCommerce, with Pix and Open Finance.",
+              "https://github.com/efipay/Plugin-Wordpress-Efi",
+              "gh",
+              "assets/banners/banner_wordpress.png",
+            ],
+            [
+              "Efí Bank n8n Module",
+              "Introduction video for Efí Bank's official n8n module, showing how to automate Pix charges and other operations in no-code workflows.",
+              "https://www.youtube.com/shorts/j5KIzpCK6q0",
+              "yt",
+              "assets/banners/banner_youtube.jpg",
+            ],
+          ],
+          h_exp: "Work experience",
+          h_stack: "Tech stack",
+          h_soft: "Core skills",
+          h_edu: "Education",
+          h_pub: "Publication",
+          h_cert: "Certifications",
+          h_lang: "Languages",
+          about:
+            "Software Engineer and AI Researcher with 6+ years of experience in backend development, REST APIs, payment integrations and open-source SDKs and plugins. Pursuing an MSc in Computer Science (deep learning for medical imaging) at UFV. Currently a Solutions Engineer at Efí Bank, defining processes, building playbooks and managing relationships with 20+ of the company's largest clients. I work with technical and business stakeholders using Scrum and Kanban.",
+          stats: [
+            ["6+", "years of experience"],
+            ["Portuguese", "native"],
+            ["English", "professional"],
+          ],
+          exp: [
+            [
+              "Solutions Engineer",
+              "Efí Bank · Remote",
+              "Mar 2026 – Present",
+              [
+                "Led the build-out of the Technical Customer Success operation from scratch, with playbook and monitoring criteria, scaling coverage to 60+ of the largest clients.",
+                "Managed 20+ strategic accounts: 4.91/5 CSAT and 100% retention.",
+                "Standardized playbooks so 97% of customer interactions were proactive.",
+                "Voice of the customer to Product and Engineering, consolidating bugs and feature requests into prioritized feedback.",
+              ],
+            ],
+            [
+              "Software Engineer II",
+              "Efí Bank · Remote",
+              "Jan 2024 – Mar 2026",
+              [
+                "Extended a Discord bot that routes customer messages to Salesforce via the Messaging API (Node.js, Express, webhooks).",
+                "Technical consulting for partners and prospects: live SDK demos and API integration support.",
+                "Built and managed the shift schedule for a 10-person team.",
+              ],
+            ],
+            [
+              "Software Engineer I",
+              "Efí Bank · Remote",
+              "Apr 2022 – Jan 2024",
+              [
+                "Led the official WordPress/WooCommerce payment plugin: rebuilt from scratch, shipped Pix and Open Finance and maintained 8+ versions; 300+ active installs.",
+                "Built Jest integration test suites (Boleto, credit card, Pix), raising endpoint coverage from 0% to 100%.",
+                "Web tool converting the mTLS certificate (.p12 → .pem), used by 380+ developers.",
+              ],
+            ],
+            [
+              "Software Development Technician",
+              "Efí Bank · Remote",
+              "Jan 2021 – Apr 2022",
+              [
+                "Developed the open-source Node.js SDK for the Pix, Boleto and Open Finance APIs: ~2,100 weekly npm downloads and 26 GitHub stars.",
+                "Technical support for developers via tickets, Discord and calls, debugging integrations (HTTP, webhooks, JSON).",
+              ],
+            ],
+            [
+              "Backend Developer",
+              "Camaleão Softwares · Itaperuna, RJ",
+              "Jan 2020 – Jan 2021",
+              [
+                "NestJS/TypeScript backend for a mobile services app, with OAuth2, MongoDB, webhooks and Jest tests.",
+              ],
+            ],
+            [
+              "IT Intern → IT Assistant",
+              "Unimed Norte Fluminense · Itaperuna, RJ",
+              "Oct 2018 – Dec 2020",
+              [
+                'Built "Comunicados Diários" (Node.js/Express + Electron) for 250+ employees.',
+                "Process mapping, basic networking, backups and clinical system support.",
+              ],
+            ],
+            [
+              "Web Developer",
+              "Couve Limão Agency · Itaperuna, RJ",
+              "Aug 2017 – Jun 2018",
+              [
+                "Blogs, corporate websites, lead-capture and sales landing pages.",
+              ],
+            ],
+          ],
+          edu: [
+            [
+              "MSc in Computer Science",
+              "UFV · 2024 – Present",
+              "Thesis: Deep Learning in Medical Imaging: Improving Meta-Learning with Self-Supervised Learning. Expected: Aug 2027.",
+            ],
+            ["BSc in Information Systems", "IFF Itaperuna · 2016 – 2020", ""],
+            ["Technical Diploma in Informatics", "IFF · 2012 – 2015", ""],
+          ],
+          cert: [
+            "NestJS: Building a REST API with TypeScript – Alura, 2022",
+            "Node.js: Build a Standardized and Scalable REST API – Alura, 2022",
+            "TypeScript Part 1 – Alura, 2022",
+            "Git and GitHub – Alura, 2021",
+            "Software Testing – UFMG, 2021",
+          ],
+        },
+      };
+      const HI = {
+        user: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+        case: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+        cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
+        star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+        code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
+        book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+        file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/>',
+        award:
+          '<circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>',
+        globe:
+          '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+      };
+      const TAGS = [
+        {
+          t: ["Jira", "OpenSearch", "Kibana"],
+          c: [
+            [
+              "Customer Success",
+              "Playbooks",
+              "Gestão de contas",
+              "Voz do cliente",
+            ],
+            [
+              "Customer Success",
+              "Playbooks",
+              "Account management",
+              "Voice of the customer",
+            ],
+          ],
+        },
+        {
+          t: [
+            "Node.js",
+            "Express",
+            "Webhooks",
+            "JSON",
+            "Salesforce Messaging API",
+            "Discord",
+          ],
+          c: [
+            ["Consultoria técnica", "Demonstração de SDKs", "Gestão de escala"],
+            ["Technical consulting", "SDK demos", "Shift scheduling"],
+          ],
+        },
+        {
+          t: [
+            "PHP",
+            "JavaScript",
+            "WordPress",
+            "WooCommerce",
+            "Pix",
+            "Open Finance",
+            "Webhooks",
+            "Jest",
+            "Git",
+          ],
+          c: [
+            ["Roadmap de produto", "Gestão de releases", "Suporte a lojistas"],
+            ["Product roadmap", "Release management", "Merchant support"],
+          ],
+        },
+        {
+          t: [
+            "Node.js",
+            "SDK open source",
+            "Pix",
+            "Boleto",
+            "Open Finance",
+            "HTTP",
+            "Webhooks",
+            "JSON",
+          ],
+          c: [
+            ["Suporte técnico", "Depuração de integrações"],
+            ["Technical support", "Integration debugging"],
+          ],
+        },
+        {
+          t: [
+            "NestJS",
+            "TypeScript",
+            "MongoDB",
+            "OAuth2",
+            "Webhooks",
+            "Jest",
+            "GitLab",
+          ],
+          c: [[], []],
+        },
+        {
+          t: ["Node.js", "Express", "Electron"],
+          c: [
+            [
+              "Mapeamento de processos",
+              "Documentação",
+              "Redes e backups",
+              "Suporte a usuários",
+            ],
+            [
+              "Process mapping",
+              "Documentation",
+              "Networking & backups",
+              "User support",
+            ],
+          ],
+        },
+        { t: ["HTML", "CSS"], c: [[], []] },
+        {
+          t: [
+            "PyTorch",
+            "Python",
+            "Lightly",
+            "Deep learning",
+            "SSL",
+            "Meta-learning",
+            "Computer vision",
+          ],
+          c: [[], []],
+        },
+      ];
+      const tg = (i, l) => {
+        const x = TAGS[i],
+          k = l === "pt" ? 0 : 1;
+        return `<div class="tags">${x.t.map((t) => `<span class="tag">${t}</span>`).join("")}${x.c[k].map((t) => `<span class="tag c">${t}</span>`).join("")}</div>`;
+      };
+      const $ = (s) => document.querySelector(s);
+      const E = (s) =>
+        String(s).replace(
+          /[&<>]/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c],
+        );
+      $("#contact").innerHTML =
+        `<li><a href="mailto:jvoliveira01@gmail.com">${IC.mail}jvoliveira01@gmail.com</a></li>` +
+        `<li><a href="https://www.linkedin.com/in/jvoliveira01" target="_blank" rel="noopener">${IC.in}jvoliveira01</a></li>` +
+        `<li><a>${IC.pin}Brasil</a></li>`;
+      function render(l) {
+        const d = D[l];
+        document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
+        document
+          .querySelectorAll("[data-t]")
+          .forEach((e) => (e.textContent = d[e.dataset.t]));
+        document
+          .querySelectorAll("h2[data-i]")
+          .forEach(
+            (e) =>
+              (e.innerHTML = `<i class="hi"><svg viewBox="0 0 24 24">${HI[e.dataset.i]}</svg></i>${E(d[e.dataset.t])}`),
+          );
+        $("#stats").innerHTML = d.stats
+          .map(
+            (s) =>
+              `<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`,
+          )
+          .join("");
+        $("#exp").innerHTML = d.exp
+          .map(
+            (e, i) =>
+              `<article class="ti"><div class="meta"><span>${E(e[2])}</span><span class="co">${E(e[1])}</span></div><h3>${E(e[0])}</h3><ul>${e[3].map((b) => `<li>${E(b)}</li>`).join("")}</ul>${tg(i, l)}</article>`,
+          )
+          .join("");
+        $("#edu").innerHTML = d.edu
+          .map(
+            (e, i) =>
+              `<div><b>${E(e[0])}</b><span>${E(e[1])}</span>${e[2] ? `<span>${E(e[2])}</span>` : ""}${i === 0 ? tg(7, l) : ""}</div>`,
+          )
+          .join("");
+        $("#pub").innerHTML =
+          `<div><a href="https://github.com/jvoliveira/Volumetric-Medical-Imaging-2025" target="_blank" rel="noopener"><b>Strategies for Deep Learning in Volumetric Medical Imaging: A Survey</b></a><span>SIBGRAPI 2025 · Salvador, BA</span></div>`;
+        $("#cert").innerHTML = d.cert.map((c) => `<li>${E(c)}</li>`).join("");
+        $("#hl").innerHTML = d.hl
+          .map((h) => {
+            const y = h[3] === "yt";
+            return `<a class="hlc" href="${h[2]}" target="_blank" rel="noopener">${h[4] ? `<img loading="lazy" alt="" src="${E(h[4])}" onerror="this.remove()">` : ""}<div class="hlb"><span class="k">${y ? IC.play : IC.gh}${y ? "YouTube" : "GitHub"}</span><b>${E(h[0])}</b><p>${E(h[1])}</p></div></a>`;
+          })
+          .join("");
+        $("#nav").innerHTML = d.nav
+          .map((n) => `<a href="#${n[0]}">${E(n[1])}</a>`)
+          .join("");
+        spy();
+        $("#lang").textContent = l === "pt" ? "EN" : "PT";
+        document.title =
+          "João Vitor Oliveira — " + (l === "pt" ? "Currículo" : "Resume");
+        try {
+          localStorage.setItem("lang", l);
+        } catch (e) {}
+      }
+      let lang = (navigator.language || "pt").toLowerCase().startsWith("pt")
+        ? "pt"
+        : "en";
+      try {
+        lang = localStorage.getItem("lang") || lang;
+      } catch (e) {}
+      $("#lang").onclick = () => {
+        lang = lang === "pt" ? "en" : "pt";
+        render(lang);
+      };
+      let th = matchMedia("(prefers-color-scheme:dark)").matches
+        ? "dark"
+        : "light";
+      try {
+        th = localStorage.getItem("theme") || th;
+      } catch (e) {}
+      document.documentElement.dataset.theme = th;
+      $("#theme").onclick = () => {
+        th = th === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = th;
+        try {
+          localStorage.setItem("theme", th);
+        } catch (e) {}
+      };
+      function spy() {
+        const ss = [...document.querySelectorAll("section[id]")];
+        let cur = ss[0].id;
+        ss.forEach((x) => {
+          if (x.getBoundingClientRect().top < 140) cur = x.id;
+        });
+        document
+          .querySelectorAll("#nav a")
+          .forEach((a) =>
+            a.classList.toggle("on", a.getAttribute("href") === "#" + cur),
+          );
+        $("#top").classList.toggle("show", scrollY > 400);
+      }
+      addEventListener("scroll", spy, { passive: true });
+      function menu(o) {
+        $("#nav").classList.toggle("open", o);
+        $("#scrim").classList.toggle("show", o);
+        $("#menu").setAttribute("aria-expanded", o);
+      }
+      $("#menu").onclick = () => menu(!$("#nav").classList.contains("open"));
+      $("#scrim").onclick = () => menu(false);
+      $("#nav").onclick = (e) => {
+        if (e.target.closest("a")) menu(false);
+      };
+      addEventListener("keydown", (e) => {
+        if (e.key === "Escape") menu(false);
+      });
+      matchMedia("(min-width:701px)").addEventListener("change", (e) => {
+        if (e.matches) menu(false);
+      });
+      $("#top").onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+      $("#yr").textContent = new Date().getFullYear();
+      render(lang);
+    </script>
+  </body>
+</html>
